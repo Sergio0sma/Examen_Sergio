@@ -31,7 +31,10 @@ public class Scene04_Move : MonoBehaviour
 
     private void Jump()
     {
-
+        if (Input.GetButtonDown("Jump") && this.isGrounded)
+        {
+            this.rg2D.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
