@@ -9,11 +9,13 @@ public class Scene01_Move : MonoBehaviour
 
     private void Move()
     {
-        if (Input.GetKey(KeyCode.W)) { transform.Translate(0, 0, 0.1f); }
-        if (Input.GetKey(KeyCode.S)) { transform.Translate(0, 0, -0.1f); }
-        if (Input.GetKey(KeyCode.A)) { transform.Translate(-0.1f, 0, 0); }
-        if (Input.GetKey(KeyCode.D)) { transform.Translate(0.1f, 0, 0); }
-        
-        
+
+
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
+
+        transform.Translate(new Vector3(horizontalInput, verticalInput, 0) * 0.1f);
+
+
     }
 }
